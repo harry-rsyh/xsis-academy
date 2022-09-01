@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url(../font/static/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-Text;
+    src: url(../font/static/Quicksand-Medium.ttf);
+}
+
+:root {
+    --blue-soft: #dbf4fb;
+    --blue-bold: #2c9cdb;
+    --blue-medium: #87dbf7;
+    --blue-outline: #bde0f3;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.navbar-hd {
+    background-color: var(--blue-soft);
+}
+
+.med-id img{
+    height: 2.3em;
+}
+
+.med-id span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue-bold);
+    font-family: Quicksand-Bold;
+}
+
+.search-bar {
+    font-family: Quicksand-Text;
+}
+
+.search-bar button{
+    border: 1px solid #2c9cdb;
+    color: var(--blue-bold);
+}
+
+.search-bar button:hover{
+    background-color: #2c9cdb;
+    color: #ffffff;
+}
+
+.nav-btn-action button {
+    padding: 0.2rem 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: Quicksand-Bold;
+}
+
+.nav-btn-action button:first-child {
+    margin: 6px;
+    outline: #2c9cdb solid 1px;
+    color: #2c9cdb;
+}
+
+.nav-btn-action button:last-child{
+    color: #ffffff;
+    background-color: #2c9cdb;
+}
+
+footer {
+    background-color: var(--blue-medium);
+}
