@@ -1,0 +1,104 @@
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url(../font/static/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-Text;
+    src: url(../font/static/Quicksand-Medium.ttf);
+}
+
+:root {
+    --blue-soft: #dbf4fb;
+    --blue-bold: #2c9cdb;
+    --blue-medium: #87dbf7;
+    --blue-medium-rgba-80: rgba(135, 219, 247, 0.6);
+    --blue-outline: #bde0f3;
+}
+
+body {
+    font-family: Quicksand-Bold;
+}
+
+/*
+ * Header
+ */
+#header{
+    background-color: var(--blue-soft);
+}
+
+/* Brand Logo */
+#brand-logo {
+    height: 2.3em;
+}
+
+/* Search Box */
+/* .search-bar input{
+    outline: var(--blue-soft) solid 2px;
+} */
+
+.search-bar .form-control:focus {
+    border-color: var(--blue-medium);
+    box-shadow: 0 0 0 0.25rem var(--blue-medium-rgba-80);
+}
+
+.search-bar .btn {
+    color: var(--blue-bold);
+    border-color: var(--blue-bold);
+    background-color: var(--blue-bold);
+    color: #fff;
+}
+
+.search-bar .btn:hover {
+    background-color: var(--blue-bold);
+    color: #fff;
+}
+
+.search-bar .btn:focus {
+    box-shadow: 0 0 0 0.25rem var(--blue-medium-rgba-80);
+}
+
+/* Button Daftar / Masuk */
+#btn-daftar {
+    background-color: var(--blue-soft);
+    color: var(--blue-bold);
+    border: 1px solid var(--blue-medium);
+    outline: var(--blue-soft) solid 3px;
+    font-weight: 600;
+}
+
+#btn-daftar:hover {
+    color: var(--blue-bold);
+    background-color: #fff;
+    outline: var(--blue-medium) solid 3px;
+}
+
+#btn-masuk {
+    background-color: var(--blue-bold);
+    border: 1px solid var(--blue-bold);
+    outline: var(--blue-soft) solid 3px;
+}
+
+#btn-masuk:hover {
+    border: 1px solid var(--blue-bold);
+    outline: var(--blue-medium) solid 3px;
+}
+
+#btn-masuk:focus {
+    box-shadow: none;
+}
+
+/*
+ * end Header
+ */
+
+
+/*
+ * Footer
+ */
+#footer {
+    background-color: var(--blue-medium);
+}
+/*
+ * End Footer
+ */
