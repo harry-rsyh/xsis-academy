@@ -28,8 +28,12 @@ body {
 }
 
 /* Brand Logo */
+.navbar-brand span {
+    color: var(--blue-bold);
+}
+
 #brand-logo {
-    height: 2.3em;
+    height: 2.3rem;
 }
 
 /* Search Box */
@@ -92,6 +96,14 @@ body {
  * end Header
  */
 
+/*
+ * Content
+ */
+
+
+/*
+ * End Content
+ */
 
 /*
  * Footer
