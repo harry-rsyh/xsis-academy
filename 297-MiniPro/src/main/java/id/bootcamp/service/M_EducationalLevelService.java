@@ -32,6 +32,14 @@ public class M_EducationalLevelService {
 		return rep.findByIsDeleteTrue();
 	}
 	
+	// Temukan Nama Duplikat
+	public Boolean duplicateName(String name) {
+		if(rep.findDuplicateName(name).size() > 0) {
+			return true;
+		}
+		return false;
+	}
+	
 	// Tampilkan Berdasarkan ID
 	public M_EducationalLevel getById(Long id) {
 		// Handling Jika tidak ada user dengan ID Tersebut

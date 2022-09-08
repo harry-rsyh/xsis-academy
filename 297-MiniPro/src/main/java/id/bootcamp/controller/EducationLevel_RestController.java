@@ -110,9 +110,8 @@ public class EducationLevel_RestController {
 		
 		// allow user save old name
 		if(!oldName.equals(newName)) {
-			List<M_EducationalLevel> listName = edlService.getByName(newName);
 			// check duplicate name
-			if(listName.size() > 0 ) {
+			if(edlService.duplicateName(newName)) {
 				return "Name Already Exist";
 			}
 		}

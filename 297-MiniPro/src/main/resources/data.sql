@@ -4,6 +4,6 @@ VALUES
     ('SMP', 1, now()),
     ('SMA', 1, now());
 
-INSERT INTO m_education_level(name, created_by, created_on, is_delete)
+INSERT INTO m_education_level(name, created_by, created_on, deleted_by, deleted_on, is_delete)
 VALUES 
-    ('SMK', 1, now(), true);
+    ('SMK', 1, now(), 1, now(), true);
