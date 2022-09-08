@@ -1,0 +1,150 @@
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url(../vendor/font-quicksand/static/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-Text;
+    src: url(../vendor/font-quicksand/static/Quicksand-Medium.ttf);
+}
+
+:root {
+    --blue-soft: #dbf4fb;
+    --blue-bold: #2c9cdb;
+    --blue-medium: #87dbf7;
+    --blue-medium-rgba-80: rgba(135, 219, 247, 0.6);
+    --blue-outline: #bde0f3;
+}
+
+body {
+    font-family: Quicksand-Bold;
+}
+
+/*
+ * Header
+ */
+#header {
+    background-color: var(--blue-soft);
+    min-height: 70px;
+}
+
+/* Brand Logo */
+.navbar-brand span {
+    color: var(--blue-bold);
+}
+
+#brand-logo {
+    height: 2.3rem;
+}
+
+/* Breadcrum */
+/* .breadcrumb-style {
+    background-color: var(--blue-medium-rgba-80);
+} */
+
+/* Button Daftar / Masuk */
+#btn-daftar {
+    background-color: var(--blue-soft);
+    color: var(--blue-bold);
+    border: 1px solid var(--blue-medium);
+    outline: var(--blue-soft) solid 3px;
+    font-weight: 600;
+}
+
+#btn-daftar:hover {
+    color: var(--blue-bold);
+    background-color: #fff;
+    outline: var(--blue-medium) solid 3px;
+}
+
+#btn-masuk {
+    background-color: var(--blue-bold);
+    border: 1px solid var(--blue-bold);
+    outline: var(--blue-soft) solid 3px;
+}
+
+#btn-masuk:hover {
+    border: 1px solid var(--blue-bold);
+    outline: var(--blue-medium) solid 3px;
+}
+
+#btn-masuk:focus {
+    box-shadow: none;
+}
+
+/*
+ * end Header
+ */
+/* .table-card{
+    border: 1px solid #dee2e6;
+    border-radius: 5px !important;
+} */
+.table-card {
+    border: 0.05rem solid #dee2e6;
+    border-radius: 5px;
+}
+
+.table.table-borderless {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-header-color {
+    background-color: var(--blue-soft);
+}
+
+.card-header-color tr {
+    border-bottom: 0.05rem solid #dee2e6;
+}
+
+.btn-action {
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #B01E28;
+    outline: rgba(255, 255, 255, 0) solid 3px;
+    border-radius: 3px;
+}
+
+.btn-action:first-child {
+    background-color: var(--blue-bold);
+}
+
+.btn-action:hover{
+    outline: var(--blue-medium) solid 3px;
+}
+
+/* Modal Inside Table */
+
+.inside-modal
+{
+  position:relative;
+  overflow: hidden;
+}
+
+.modal, .modal-backdrop {
+    position: absolute !important;
+}
+.modal-backdrop {
+    --bs-backdrop-bg: rgba(0, 0, 0, 0.3);
+}
+
+/*
+ * Content
+ */
+
+
+/*
+ * End Content
+ */
+
+/*
+ * Footer
+ */
+#footer {
+    background-color: var(--blue-medium);
+}
+
+/*
+ * End Footer
+ */
