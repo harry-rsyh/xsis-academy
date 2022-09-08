@@ -12,6 +12,7 @@ public interface M_EducationalLevelRepository extends JpaRepository<M_Educationa
 	//Find By Name (name = :name)
 	List<M_EducationalLevel> findByName(String name);
 	
+	//Find Duplicate name for push
 	@Query(value = "SELECT * FROM m_education_level WHERE name = :name AND is_delete = false", nativeQuery = true)
 	List<M_EducationalLevel> findDuplicateName(String name);
 		
