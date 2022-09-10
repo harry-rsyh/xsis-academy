@@ -43,32 +43,18 @@ body {
 } */
 
 /* Button Daftar / Masuk */
-#btn-daftar {
-    background-color: var(--blue-soft);
-    color: var(--blue-bold);
-    border: 1px solid var(--blue-medium);
-    outline: var(--blue-soft) solid 3px;
-    font-weight: 600;
-}
-
-#btn-daftar:hover {
-    color: var(--blue-bold);
-    background-color: #fff;
-    outline: var(--blue-medium) solid 3px;
-}
-
-#btn-masuk {
-    background-color: var(--blue-bold);
+.btn-cust-primary {
+    background-color: var(--blue-bold) !important;
     border: 1px solid var(--blue-bold);
     outline: var(--blue-soft) solid 3px;
 }
 
-#btn-masuk:hover {
+.btn-cust-primary:hover {
     border: 1px solid var(--blue-bold);
     outline: var(--blue-medium) solid 3px;
 }
 
-#btn-masuk:focus {
+.btn-cust-primary:focus {
     box-shadow: none;
 }
 
@@ -82,6 +68,10 @@ body {
 .table-card {
     border: 0.05rem solid #dee2e6;
     border-radius: 5px;
+}
+
+.table-card > table{
+    min-height: 140px !important;
 }
 
 .table.table-borderless {

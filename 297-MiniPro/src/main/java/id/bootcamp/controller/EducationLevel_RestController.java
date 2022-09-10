@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,7 +43,7 @@ public class EducationLevel_RestController {
 	}
 
 	// Get By Id
-	@GetMapping("getById/{}")
+	@GetMapping("getById/{id}")
 	public M_EducationalLevel getById(@PathVariable("id") Long id) {
 		return edlService.getById(id);
 	}
@@ -75,8 +76,7 @@ public class EducationLevel_RestController {
 		}
 		
 		// Validate name existing | case sensitif
-		List<M_EducationalLevel> listName = edlService.getByName(mEdl.getName().toString());
-		if(listName.size() > 0 ) {
+		if(edlService.duplicateName(mEdl.getName().toString())) {
 			return "Name Already Exist";
 		}
 		
@@ -123,6 +123,25 @@ public class EducationLevel_RestController {
 		newEdl.setModified_on(new Date());
 		
 		edlService.saveLevel(newEdl);
+		return "ok";
+	}
+	
+	// Edit Level Name
+	@DeleteMapping("deleteLevel/{id}")
+	public String deleteLevel(@PathVariable("id") Long idLevel) {
+		M_EducationalLevel edlModel = edlService.getById(idLevel);
+		
+		// Validate Old EducationLevel already exist
+		if(edlModel == null) {
+			return "404 - ID Not Found";
+		}
+		
+		edlModel.setDeleted_by(1L);
+		edlModel.setDeleted_on(new Date());
+		edlModel.setIs_delete(true);
+		
+		edlService.saveLevel(edlModel);
+		
 		return "ok";
 	}
 
