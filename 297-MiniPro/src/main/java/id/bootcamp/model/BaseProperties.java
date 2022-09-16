@@ -10,79 +10,84 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @MappedSuperclass
 public class BaseProperties {
 	@Column(nullable = false)
-	private Long created_by;
+	private Long createdBy;
 	
 	@Column(nullable = false)
 	@JsonFormat(pattern = "dd-MM-yyyy HH:mm", timezone = "Asia/Jakarta")
-	private Date created_on;
+	private Date createdOn;
 	
-	private Long modified_by;
-	
-	@JsonFormat(pattern = "dd-MM-yyyy HH:mm", timezone = "Asia/Jakarta")
-	private Date modified_on;
-	
-	private Long deleted_by;
+	private Long modifiedBy;
 	
 	@JsonFormat(pattern = "dd-MM-yyyy HH:mm", timezone = "Asia/Jakarta")
-	private Date deleted_on;
+	private Date modifiedOn;
+	
+	private Long deletedBy;
+	
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm", timezone = "Asia/Jakarta")
+	private Date deletedOn;
 	
 	@Column(nullable = false, columnDefinition = "boolean default false")
-	private Boolean is_delete = false;
-
-	public Long getCreated_by() {
-		return created_by;
+	private Boolean isDelete = false;
+	
+	public BaseProperties() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setCreated_by(Long created_by) {
-		this.created_by = created_by;
+	public Long getCreatedBy() {
+		return createdBy;
 	}
 
-	public Date getCreated_on() {
-		return created_on;
+	public void setCreatedBy(Long createdBy) {
+		this.createdBy = createdBy;
 	}
 
-	public void setCreated_on(Date created_on) {
-		this.created_on = created_on;
+	public Date getCreatedOn() {
+		return createdOn;
 	}
 
-	public Long getModified_by() {
-		return modified_by;
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
 	}
 
-	public void setModified_by(Long modified_by) {
-		this.modified_by = modified_by;
+	public Long getModifiedBy() {
+		return modifiedBy;
 	}
 
-	public Date getModified_on() {
-		return modified_on;
+	public void setModifiedBy(Long modifiedBy) {
+		this.modifiedBy = modifiedBy;
 	}
 
-	public void setModified_on(Date modified_on) {
-		this.modified_on = modified_on;
+	public Date getModifiedOn() {
+		return modifiedOn;
 	}
 
-	public Long getDeleted_by() {
-		return deleted_by;
+	public void setModifiedOn(Date modifiedOn) {
+		this.modifiedOn = modifiedOn;
 	}
 
-	public void setDeleted_by(Long deleted_by) {
-		this.deleted_by = deleted_by;
+	public Long getDeletedBy() {
+		return deletedBy;
 	}
 
-	public Date getDeleted_on() {
-		return deleted_on;
+	public void setDeletedBy(Long deletedBy) {
+		this.deletedBy = deletedBy;
 	}
 
-	public void setDeleted_on(Date deleted_on) {
-		this.deleted_on = deleted_on;
+	public Date getDeletedOn() {
+		return deletedOn;
 	}
 
-	public Boolean getIs_delete() {
-		return is_delete;
+	public void setDeletedOn(Date deletedOn) {
+		this.deletedOn = deletedOn;
 	}
 
-	public void setIs_delete(Boolean is_delete) {
-		this.is_delete = is_delete;
+	public Boolean getIsDelete() {
+		return isDelete;
 	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
+	}
+	
 	
 }

@@ -29,6 +29,10 @@ public class M_Biodata extends BaseProperties {
 	
 	@Column(length = 255)
 	private String image_path;
+	
+	public M_Biodata() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;

@@ -80,8 +80,8 @@ public class EducationLevel_RestController {
 			return "Name Already Exist";
 		}
 		
-		mEdl.setCreated_by(1L);
-		mEdl.setCreated_on(new Date());
+		mEdl.setCreatedBy(1L);
+		mEdl.setCreatedOn(new Date());
 		
 		edlService.saveLevel(mEdl);
 		return "ok";
@@ -116,11 +116,11 @@ public class EducationLevel_RestController {
 			}
 		}
 		
-		newEdl.setCreated_by(oldEdl.getCreated_by());
-		newEdl.setCreated_on(oldEdl.getCreated_on());
+		newEdl.setCreatedBy(oldEdl.getCreatedBy());
+		newEdl.setCreatedOn(oldEdl.getCreatedOn());
 		
-		newEdl.setModified_by(1L);
-		newEdl.setModified_on(new Date());
+		newEdl.setCreatedBy(1L);
+		newEdl.setCreatedOn(new Date());
 		
 		edlService.saveLevel(newEdl);
 		return "ok";
@@ -136,9 +136,9 @@ public class EducationLevel_RestController {
 			return "404 - ID Not Found";
 		}
 		
-		edlModel.setDeleted_by(1L);
-		edlModel.setDeleted_on(new Date());
-		edlModel.setIs_delete(true);
+		edlModel.setDeletedBy(1L);
+		edlModel.setDeletedOn(new Date());
+		edlModel.setIsDelete(true);
 		
 		edlService.saveLevel(edlModel);
 		

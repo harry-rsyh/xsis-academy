@@ -52,6 +52,10 @@ public class M_Doctor extends BaseProperties{
 
 	@Column(length = 50)
 	private String str;
+	
+	public M_Doctor() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;
