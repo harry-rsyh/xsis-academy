@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import id.bootcamp.model.M_EducationalLevel;
-import id.bootcamp.repository.M_EducationalLevelRepository;
+import id.bootcamp.repository.Rep_EducationalLevel;
 
 @Service
 @Transactional
 public class M_EducationalLevelService {
 	
 	@Autowired
-	private M_EducationalLevelRepository rep;
+	private Rep_EducationalLevel rep;
 	
 	// Tampilkan Semua Level Edukasi Termasuk yang Telah dihapus
 	public List<M_EducationalLevel> getAllLevel(){
