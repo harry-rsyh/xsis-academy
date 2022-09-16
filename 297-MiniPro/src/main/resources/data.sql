@@ -70,8 +70,8 @@ VALUES
       ('Semarang Tengah', 1, 4, 1, now()),
       ('Tembalang', 1, 4, 1, now()),
       ('Jakarta Selatan', null, 3, 1, now()),
-      ('Pasar Minggu', 5, 3, 1, now()),
-      ('Tebet', 5, 3, 1, now());
+      ('Pasar Minggu', 5, 4, 1, now()),
+      ('Tebet', 5, 4, 1, now());
 
 -- M5
 INSERT INTO m_specialization(name, created_by, created_on)

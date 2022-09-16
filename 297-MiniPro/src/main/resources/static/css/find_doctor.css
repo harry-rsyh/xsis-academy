@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url(../vendor/font-quicksand/static/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-Text;
+    src: url(../vendor/font-quicksand/static/Quicksand-Medium.ttf);
+}
+
+:root {
+    --blue-soft: #dbf4fb;
+    --blue-bold: #2c9cdb;
+    --blue-medium: #87dbf7;
+    --blue-medium-rgba-80: rgba(135, 219, 247, 0.6);
+    --blue-outline: #bde0f3;
+}
+
+body {
+    font-family: Quicksand-Bold;
+}
+
+main {
+    font-family: Quicksand-Text;
+}
+
+/*
+ * Header
+ */
+#header {
+    background-color: var(--blue-soft);
+    min-height: 70px;
+}
+
+/* Brand Logo */
+.navbar-brand span {
+    color: var(--blue-bold);
+}
+
+#brand-logo {
+    height: 2.3rem;
+}
+
+/** Main Content */
+.btn-cust-outline {
+    color: var(--blue-bold);
+    border: 1px solid var(--blue-medium);
+    outline: rgba(0, 0, 0, 0) solid 3px;
+    font-weight: 600;
+}
+
+.btn-cust-outline:hover {
+    color: var(--blue-bold);
+    border: 1px solid var(--blue-medium);
+    outline: var(--blue-soft) solid 3px;
+}
+
+.btn-cust-outline:focus {
+    color: var(--blue-bold);
+    border: 1px solid var(--blue-medium);
+    outline: var(--blue-soft) solid 3px;
+}
+/** End Main Content */
+
+/*
+ * Footer
+ */
+#footer {
+    background-color: var(--blue-medium);
+}
+
+/*
+ * End Footer
+ */

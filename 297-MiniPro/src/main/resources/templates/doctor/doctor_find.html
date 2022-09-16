@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cari Dokter</title>
+	<link rel="stylesheet" href="../vendor/bootsrap5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="../css/find_doctor.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+	<header class="navbar navbar-expand-lg" id="header">
+		<nav class="container-fluid" aria-label="header-nav">
+			<div class="container-xxl">
+				<div class="row align-items-center justify-content-start">
+					<!-- Brand -->
+					<div class="col p-2">
+						<ol class="breadcrumb mb-0">
+							<li class="breadcrumb-item"><a href="#" class="text-decoration-none">Beranda</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Cari Dokter</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<main class="flex-grow-1">
+		<div class="container-xxl p-4">
+
+			<!-- row -->
+			<div class="row row-cols-2 p-4">
+				<div class="col">
+					<p>Pencarian Berdasarkan kata kunci: Lokasi Jabodetabek<br>
+						Spesialisasi/Sub-spesialisai: Anak</p>
+				</div>
+				<div class="col text-end">
+					<button id="btnFilterSearch" class="btn btn-cust-outline">Ulangi Pencarian</button>
+				</div>
+			</div>
+
+			<!-- Menu -->
+			<!-- Class row-cols digunakan untuk membagi jumlah kolom dalam satu baris -->
+			<div id="doctorList" class="row row-cols-2 g-2 g-lg-4 p-4">
+
+				<div class="col">
+					<a class="card shadow-sm text-decoration-none text-black" href="#">
+						<div class="card-body">
+
+							<div class="row row-cols-2">
+
+								<div class="col-9">
+									<h5 class="card-title">Nama dokter biasanya panjang kan</h5>
+									<h6 class="card-subtitle text-muted">Spesialis Anak</h6>
+									<h6 class="card-subtitle text-muted">5 Tahun pengalaman</h6>
+
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Mitra, (Jatiasih, Bekasi)
+									</section>
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Persahabatan, (Kebayoran Lama, Jakarta Selatan)
+									</section>
+
+								</div>
+
+								<div class="col-3 d-flex flex-column">
+									<img class="w-100" src="../icons/account_circle_black_48dp.svg" alt="img Doctor">
+								</div>
+
+
+							</div>
+
+							<div class="row row-cols-2 align-items-end">
+								<div class="col-9">
+									<button class="btn btn-cust-outline w-100">info lebih banyak</button>
+								</div>
+								<div class="col-3 px-4">
+									<div class="row d-flex flex-column">
+										<div class="btn btn-cust-outline mb-2">Chat</div>
+										<div class="btn btn-primary">Buat Janji</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</a>
+				</div>
+				
+				
+				<div class="col">
+					<a class="card shadow-sm text-decoration-none text-black" href="#">
+						<div class="card-body">
+
+							<div class="row row-cols-2">
+
+								<div class="col-9">
+									<h5 class="card-title">Nama dokter biasanya panjang kan</h5>
+									<h6 class="card-subtitle text-muted">Spesialis Anak</h6>
+									<h6 class="card-subtitle text-muted">5 Tahun pengalaman</h6>
+
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Mitra, (Jatiasih, Bekasi)
+									</section>
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Persahabatan, (Kebayoran Lama, Jakarta Selatan)
+									</section>
+
+								</div>
+
+								<div class="col-3 d-flex flex-column">
+									<img class="w-100" src="../icons/account_circle_black_48dp.svg" alt="img Doctor">
+								</div>
+
+
+							</div>
+
+							<div class="row row-cols-2 align-items-end">
+								<div class="col-9">
+									<button class="btn btn-cust-outline w-100">info lebih banyak</button>
+								</div>
+								<div class="col-3 px-4">
+									<div class="row d-flex flex-column">
+										<div class="btn btn-cust-outline mb-2">Chat</div>
+										<div class="btn btn-primary">Buat Janji</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</a>
+				</div>
+				
+				
+				<div class="col">
+					<a class="card shadow-sm text-decoration-none text-black" href="#">
+						<div class="card-body">
+
+							<div class="row row-cols-2">
+
+								<div class="col-9">
+									<h5 class="card-title">Nama dokter biasanya panjang kan</h5>
+									<h6 class="card-subtitle text-muted">Spesialis Anak</h6>
+									<h6 class="card-subtitle text-muted">5 Tahun pengalaman</h6>
+
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Mitra, (Jatiasih, Bekasi)
+									</section>
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Persahabatan, (Kebayoran Lama, Jakarta Selatan)
+									</section>
+
+								</div>
+
+								<div class="col-3 d-flex flex-column">
+									<img class="w-100" src="../icons/account_circle_black_48dp.svg" alt="img Doctor">
+								</div>
+
+
+							</div>
+
+							<div class="row row-cols-2 align-items-end">
+								<div class="col-9">
+									<button class="btn btn-cust-outline w-100">info lebih banyak</button>
+								</div>
+								<div class="col-3 px-4">
+									<div class="row d-flex flex-column">
+										<div class="btn btn-cust-outline mb-2">Chat</div>
+										<div class="btn btn-primary">Buat Janji</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</a>
+				</div>
+				
+				
+				<div class="col">
+					<a class="card shadow-sm text-decoration-none text-black" href="#">
+						<div class="card-body">
+
+							<div class="row row-cols-2">
+
+								<div class="col-9">
+									<h5 class="card-title">Nama dokter biasanya panjang kan</h5>
+									<h6 class="card-subtitle text-muted">Spesialis Anak</h6>
+									<h6 class="card-subtitle text-muted">5 Tahun pengalaman</h6>
+
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Mitra, (Jatiasih, Bekasi)
+									</section>
+									<section>
+										<img class="img-fluid" src="../icons/business_black_48dp.svg" alt="build icons"
+											style="height: 18px;">
+										Rs Persahabatan, (Kebayoran Lama, Jakarta Selatan)
+									</section>
+
+								</div>
+
+								<div class="col-3 d-flex flex-column">
+									<img class="w-100" src="../icons/account_circle_black_48dp.svg" alt="img Doctor">
+								</div>
+
+
+							</div>
+
+							<div class="row row-cols-2 align-items-end">
+								<div class="col-9">
+									<button class="btn btn-cust-outline w-100">info lebih banyak</button>
+								</div>
+								<div class="col-3 px-4">
+									<div class="row d-flex flex-column">
+										<div class="btn btn-cust-outline mb-2">Chat</div>
+										<div class="btn btn-primary">Buat Janji</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<!-- Menu -->
+
+			<!-- Pagination -->
+			<div class="row p-4">
+				<div class="col">
+					<div class="float-end">
+						<span style="margin-right: 8px;">Menampilkan 1 - 10 dari 83</span>
+						<button class="btn btn-cust-outline">Sebelumnya</button>
+						<button class="btn btn-cust-outline">Sesudahnya</button>
+					</div>
+				</div>
+			</div>
+			<!-- End Pagination -->
+
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Cari Dokter</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body px-4">
+
+						<div class="px-4">
+							<div class="mb-3">
+								<label for="inpLocation" class="form-label">Lokasi</label>
+								<select id="inpLocation" class="form-select" aria-label="Default select example">
+									<!-- Location Here -->
+									<!--
+									<optgroup label="Swedish Cars">
+										<option value="volvo">Volvo</option>
+										<option value="saab">Saab</option>
+									</optgroup>
+									<optgroup label="German Cars">
+										<option value="mercedes">Mercedes</option>
+										<option value="audi">Audi</option>
+									</optgroup>
+									-->
+								</select>
+							</div>
+
+							<div class="mb-3">
+								<label for="inpName" class="form-label">Nama Dokter</label>
+								<input id="inpName" type="text" class="form-control" autocomplete="off">
+							</div>
+
+							<div class="mb-3">
+								<label for="inpSpecialization" class="form-label">Spesialisasi/Sub-spesialisasi <span
+										class="text-danger">*</span></label>
+								<select id="inpSpecialization" class="form-select" aria-label="Default select example">
+									<!-- Specialization Here -->
+								</select>
+								<div id="emailHelp" class="form-text fst-italic text-danger">* Pilihan Spesialisasi
+									Harus di Isi</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="inpTreat" class="form-label">Tindakan Medis</label>
+								<select id="inpTreat" class="form-select" aria-label="Default select example">
+									<!-- Treatment Here -->
+								</select>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ulangi</button>
+						<button type="button" class="btn btn-primary">Cari</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Modal -->
+	</main>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div>
+			<p class="text-center my-3 fw-bold">Under construction... see us soon!!</p>
+		</div>
+	</footer>
+
+	<script src="../vendor/bootsrap5/js/bootstrap.bundle.min.js"></script>
+	<script src="../vendor/fontawesome/js/all.min.js"></script>
+	<script src="../vendor/jquery/jquery-3.6.1.min.js"></script>
+	<script src="../js/find_doctor.js"></script>
+
+</body>
+
+</html>
