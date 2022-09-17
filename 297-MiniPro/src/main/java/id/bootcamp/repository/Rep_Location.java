@@ -18,4 +18,7 @@ public interface Rep_Location extends JpaRepository<M_Location, Long>{
 	
 	@Query(nativeQuery = true)
 	public List<LocationSpesificData> getKecamatanList();
+	
+	@Query(nativeQuery = true)
+	public List<LocationSpesificData> getKabKotaList();
 }

@@ -46,6 +46,21 @@ import id.bootcamp.dto.LocationSpesificData;
 					}
 				)
 			}
+		),
+		@SqlResultSetMapping(
+			name = "kabKotaMapping",
+			classes = {
+				@ConstructorResult(
+					targetClass = LocationSpesificData.class,
+					columns = {
+							@ColumnResult(name = "id", type = Long.class),
+							@ColumnResult(name = "name"),
+							@ColumnResult(name = "parent_id", type = Long.class),
+							@ColumnResult(name = "location_level_id", type = Long.class),
+							@ColumnResult(name = "is_delete", type = Boolean.class)
+					}
+				)
+			}
 		)
 	}
 )
@@ -63,6 +78,13 @@ import id.bootcamp.dto.LocationSpesificData;
 			query = "SELECT	id,	name, parent_id, location_level_id,	is_delete "
 				  + "FROM m_location WHERE location_level_id = 4;",
 			resultSetMapping = "kecamatanMapping",
+			resultClass = LocationSpesificData.class
+		),
+		@NamedNativeQuery(
+			name = "M_Location.getKabKotaList",
+			query = "SELECT	id,	name, parent_id, location_level_id,	is_delete "
+				  + "FROM m_location WHERE location_level_id = 2 OR location_level_id = 3;",
+			resultSetMapping = "kabKotaMapping",
 			resultClass = LocationSpesificData.class
 		)
 	}

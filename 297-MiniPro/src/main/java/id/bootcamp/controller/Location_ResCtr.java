@@ -26,4 +26,9 @@ public class Location_ResCtr {
 	public List<LocationSpesificData> getKecamatanList(){
 		return svcLocation.getKecamatanList();
 	}
+	
+	@RequestMapping("getKabKotaList")
+	public List<LocationSpesificData> getKabKotaList(){
+		return svcLocation.getKabKotaList();
+	}
 }

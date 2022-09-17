@@ -1,7 +1,6 @@
 package id.bootcamp.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -25,5 +24,9 @@ public class Svc_Location {
 	
 	public List<LocationSpesificData> getKecamatanList(){
 		return repLocation.getKecamatanList();
+	}
+	
+	public List<LocationSpesificData> getKabKotaList(){
+		return repLocation.getKabKotaList();
 	}
 }
