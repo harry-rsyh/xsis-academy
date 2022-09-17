@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import id.bootcamp.dto.LocationData;
+import id.bootcamp.dto.LocationSpesificData;
 import id.bootcamp.repository.Rep_Location;
 
 @Service
@@ -22,9 +23,7 @@ public class Svc_Location {
 		return repLocation.getLocationList();
 	}
 	
-	public List<LocationData> getKotaAndKabupaten(){
-		return repLocation.getLocationList().stream()
-					.filter(data -> data.getLocationLevelId() == 3 || data.getLocationLevelId() == 2)
-					.collect(Collectors.toList());
+	public List<LocationSpesificData> getKecamatanList(){
+		return repLocation.getKecamatanList();
 	}
 }

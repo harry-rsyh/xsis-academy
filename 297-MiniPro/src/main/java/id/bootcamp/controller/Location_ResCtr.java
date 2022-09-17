@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import id.bootcamp.dto.LocationData;
-import id.bootcamp.model.M_Location;
+import id.bootcamp.dto.LocationSpesificData;
 import id.bootcamp.service.Svc_Location;
 
 @RestController
@@ -22,8 +22,8 @@ public class Location_ResCtr {
 		return svcLocation.getAllLocation();
 	}
 	
-	@RequestMapping("getKotaAndKabupaten")
-	public List<LocationData> getKotaAndKabupaten(){
-		return svcLocation.getKotaAndKabupaten();
+	@RequestMapping("getKecamatanList")
+	public List<LocationSpesificData> getKecamatanList(){
+		return svcLocation.getKecamatanList();
 	}
 }

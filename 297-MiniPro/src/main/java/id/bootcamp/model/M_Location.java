@@ -14,6 +14,7 @@ import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
 import id.bootcamp.dto.LocationData;
+import id.bootcamp.dto.LocationSpesificData;
 
 @SqlResultSetMappings(
 	value = {
@@ -30,6 +31,21 @@ import id.bootcamp.dto.LocationData;
 					}
 				)
 			}
+		),
+		@SqlResultSetMapping(
+			name = "kecamatanMapping",
+			classes = {
+				@ConstructorResult(
+					targetClass = LocationSpesificData.class,
+					columns = {
+							@ColumnResult(name = "id", type = Long.class),
+							@ColumnResult(name = "name"),
+							@ColumnResult(name = "parent_id", type = Long.class),
+							@ColumnResult(name = "location_level_id", type = Long.class),
+							@ColumnResult(name = "is_delete", type = Boolean.class)
+					}
+				)
+			}
 		)
 	}
 )
@@ -41,6 +57,13 @@ import id.bootcamp.dto.LocationData;
 			query = "SELECT id,	name, parent_id, location_level_id FROM m_location;",
 			resultSetMapping = "locationMapping",
 			resultClass = LocationData.class
+		),
+		@NamedNativeQuery(
+			name = "M_Location.getKecamatanList",
+			query = "SELECT	id,	name, parent_id, location_level_id,	is_delete "
+				  + "FROM m_location WHERE location_level_id = 4;",
+			resultSetMapping = "kecamatanMapping",
+			resultClass = LocationSpesificData.class
 		)
 	}
 )
