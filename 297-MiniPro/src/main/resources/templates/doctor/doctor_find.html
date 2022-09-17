@@ -39,7 +39,7 @@
 						Spesialisasi/Sub-spesialisai: Anak</p>
 				</div>
 				<div class="col text-end">
-					<button id="btnFilterSearch" class="btn btn-cust-outline">Ulangi Pencarian</button>
+					<button id="openFilterModal" class="btn btn-cust-outline">Ulangi Pencarian</button>
 				</div>
 			</div>
 
@@ -93,8 +93,8 @@
 						</div>
 					</a>
 				</div>
-				
-				
+
+
 				<div class="col">
 					<a class="card shadow-sm text-decoration-none text-black" href="#">
 						<div class="card-body">
@@ -141,8 +141,8 @@
 						</div>
 					</a>
 				</div>
-				
-				
+
+
 				<div class="col">
 					<a class="card shadow-sm text-decoration-none text-black" href="#">
 						<div class="card-body">
@@ -189,8 +189,8 @@
 						</div>
 					</a>
 				</div>
-				
-				
+
+
 				<div class="col">
 					<a class="card shadow-sm text-decoration-none text-black" href="#">
 						<div class="card-body">
@@ -259,6 +259,7 @@
 		<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
+
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Cari Dokter</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -266,20 +267,11 @@
 					<div class="modal-body px-4">
 
 						<div class="px-4">
+
 							<div class="mb-3">
 								<label for="inpLocation" class="form-label">Lokasi</label>
 								<select id="inpLocation" class="form-select" aria-label="Default select example">
 									<!-- Location Here -->
-									<!--
-									<optgroup label="Swedish Cars">
-										<option value="volvo">Volvo</option>
-										<option value="saab">Saab</option>
-									</optgroup>
-									<optgroup label="German Cars">
-										<option value="mercedes">Mercedes</option>
-										<option value="audi">Audi</option>
-									</optgroup>
-									-->
 								</select>
 							</div>
 
@@ -299,8 +291,8 @@
 							</div>
 
 							<div class="mb-3">
-								<label for="inpTreat" class="form-label">Tindakan Medis</label>
-								<select id="inpTreat" class="form-select" aria-label="Default select example">
+								<label for="inpTreatment" class="form-label">Tindakan Medis</label>
+								<select id="inpTreatment" class="form-select" aria-label="Default select example">
 									<!-- Treatment Here -->
 								</select>
 							</div>
@@ -330,6 +322,72 @@
 	<script src="../vendor/jquery/jquery-3.6.1.min.js"></script>
 	<script src="../js/find_doctor.js"></script>
 
+	<!-- Modal Search -->
+	<script>
+		/*API*/
+		
+		//[1] Api Location List
+		function getLocationList(){
+			return $.ajax({
+				url: '/api/location/getKotaAndKabupaten',
+				method: 'GET',
+				async: false
+			})
+		}
+		
+		//[2] Api Specialization list
+		function getSpecializationList(){
+			return $.ajax({
+				url:"/api/specialization/getList",
+				method: 'GET',
+				async: false
+			})
+		}
+		
+		//[3] Api Treatment list
+		function getDoctorTreatmentList(){
+			return $.ajax({
+				url: '/api/doctorTreatment/getList',
+				method: 'GET',
+				async: false
+			})
+		}
+
+		/*Action*/
+		$("#openFilterModal").click(function(){
+			$("#filterModal").modal("show");
+
+			/*inpLocation*/
+			const dataKotaAndKabupaten = getLocationList().responseJSON;
+			$("#inpLocation").empty();
+			$("#inpLocation").append('<option value="">Semua</option>');
+			dataKotaAndKabupaten.forEach(data => {
+				$("#inpLocation").append(`
+					<option value="${data.id}">${data.name}</option>
+				`);
+			});
+			
+			/*inpSpecialization*/
+			const dataSpecialization = getSpecializationList().responseJSON;
+			$("#inpSpecialization").empty();
+			$("#inpSpecialization").append('<option value="" disabled selected hidden>--Pilih Spesialisasi--</option>');
+			dataSpecialization.forEach(data => {
+				$("#inpSpecialization").append(`
+					<option value="${data.id}">${data.name}</option>
+				`);
+			})
+			
+			/*inpTreatment*/
+			const dataTreatment = getDoctorTreatmentList().responseJSON;
+			$("#inpTreatment").empty();
+			$("#inpTreatment").append('<option value="">Semua</option>');
+			dataTreatment.forEach(data => {
+				$("#inpTreatment").append(`
+					<option value="${data.name}">${data.name}</option>
+				`);
+			})
+		})
+	</script>
 </body>
 
 </html>

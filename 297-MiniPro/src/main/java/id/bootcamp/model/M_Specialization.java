@@ -1,11 +1,49 @@
 package id.bootcamp.model;
 
 import javax.persistence.Column;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.SqlResultSetMapping;
+import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
+
+import id.bootcamp.dto.SpecializationData;
+
+@SqlResultSetMappings(
+	value = {
+		@SqlResultSetMapping(
+			name = "specializationMapping",
+			classes = {
+				@ConstructorResult(
+					targetClass = SpecializationData.class,
+					columns = {
+						@ColumnResult(name = "id", type = Long.class),
+						@ColumnResult(name = "name"),
+						@ColumnResult(name = "is_delete", type = Boolean.class)
+					}
+				)
+			}
+		)
+	}
+)
+
+@NamedNativeQueries(
+	value = {
+		@NamedNativeQuery(
+			name = "M_Specialization.getSpecializationList",
+			query = "SELECT id, name, is_delete FROM m_specialization;",
+			resultSetMapping = "specializationMapping",
+			resultClass = SpecializationData.class
+		)
+	}
+)
+
 
 @Entity
 @Table(name = "m_specialization")

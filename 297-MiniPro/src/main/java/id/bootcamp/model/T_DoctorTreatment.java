@@ -1,11 +1,50 @@
 package id.bootcamp.model;
 
 import javax.persistence.Column;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.SqlResultSetMapping;
+import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
+
+import id.bootcamp.dto.DoctorTreatmentData;
+
+@SqlResultSetMappings(
+	value = {
+		@SqlResultSetMapping(
+			name = "treatmentMapping",
+			classes = {
+				@ConstructorResult(
+					targetClass = DoctorTreatmentData.class,
+					columns = {
+						@ColumnResult(name = "id", type = Long.class),
+						@ColumnResult(name = "name")
+					}
+				)
+			}
+		)
+	}
+)
+
+@NamedNativeQueries(
+	value = {
+		@NamedNativeQuery(
+			name = "T_DoctorTreatment.getTreatmentList",
+			query= "SELECT "
+				 + "ROW_NUMBER() OVER (ORDER BY name) id, name "
+				 + "FROM t_doctor_treatment "
+				 + "GROUP by name;",
+			resultSetMapping = "treatmentMapping",
+			resultClass = DoctorTreatmentData.class
+		)
+	}
+)
 
 @Entity
 @Table(name = "t_doctor_treatment")

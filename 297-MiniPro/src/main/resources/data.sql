@@ -80,6 +80,10 @@ VALUES
       ('Dokter Kandungan', 1, now()),
       ('Dokter Mata', 1, now());
 
+INSERT INTO m_specialization(name, created_by, created_on, is_delete, deleted_by, deleted_on)
+VALUES
+      ('Dokter THT', 1, now(), true, 1, now());
+
 -- M6
 INSERT INTO m_medical_facility(name, full_address , location_id, created_by, created_on)
 VALUES
