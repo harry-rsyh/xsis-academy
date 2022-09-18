@@ -1,5 +1,8 @@
 package id.bootcamp.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DoctorDto {
 	private Long id;
 	private String str;
@@ -7,6 +10,7 @@ public class DoctorDto {
 	private String mobilePhone;
 	private String imagePath;
 	private Boolean isDelete;
+	private List<DoctorTreatmentDto> treatmentList;
 
 	public DoctorDto() {
 		// TODO Auto-generated constructor stub
@@ -21,6 +25,18 @@ public class DoctorDto {
 		this.imagePath = imagePath;
 		this.isDelete = isDelete;
 	}
+	
+	public DoctorDto(DoctorDto doctor, List<DoctorTreatmentDto> treatmentList) {
+		super();
+		this.id = doctor.getId();
+		this.str = doctor.getStr();
+		this.name = doctor.getName();
+		this.mobilePhone = doctor.getMobilePhone();
+		this.imagePath = doctor.getImagePath();
+		this.isDelete = doctor.getIsDelete();
+		this.treatmentList = treatmentList;
+	}
+	
 	
 	/*
 	 * Nama yang ditampilkan di api adalah setelah Get
@@ -60,5 +76,23 @@ public class DoctorDto {
 	public Boolean getIsDelete() {
 		return isDelete;
 	}
+
+	public List<DoctorTreatmentDto> getTreatmentList() {
+		return treatmentList;
+	}
+
+	public void setTreatmentList(DoctorTreatmentDto treatmentList) {
+		this.treatmentList.add(treatmentList);
+	}
+
+//	public List<DoctorTreatmentDto> getTreatment() {
+//		return treatmentList;
+//	}
+//
+//	public void setTreatment(DoctorTreatmentDto t) {
+//		DoctorTreatmentDto data = new DoctorTreatmentDto(t.getId(), t.getDoctorId(), t.getDoctorName(), t.getTreatment(), t.getIsDelete());
+////		System.out.println(treatment.getDoctorName());
+//		this.treatmentList.add(data);
+//	}
 	
 }
