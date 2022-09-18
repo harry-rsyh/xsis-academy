@@ -16,7 +16,7 @@ public interface Rep_Doctor extends JpaRepository<M_Doctor, Long>{
 	@Query(nativeQuery = true)
 	public List<DoctorData> getAllDoctors();
 	
-	@Query(value = "SELECT new id.bootcamp.dto.DoctorDto(d.id, d.str, b.fullname, b.mobile_phone, b.image_path) "
+	@Query(value = "SELECT new id.bootcamp.dto.DoctorDto(d.id, d.str, b.fullname, b.mobile_phone, b.image_path, d.isDelete) "
 			+ "FROM M_Doctor d "
 			+ "LEFT JOIN M_Biodata b "
 			+ "ON d.biodata_id = b.id")
