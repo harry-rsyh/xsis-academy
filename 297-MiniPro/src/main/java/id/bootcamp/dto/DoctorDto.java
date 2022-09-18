@@ -21,6 +21,21 @@ public class DoctorDto {
 		this.imagePath = imagePath;
 		this.isDelete = isDelete;
 	}
+	
+	/*
+	 * Nama yang ditampilkan di api adalah setelah Get
+	 * ex getId maka id
+	 * jika mau edit nama cukup di getter dan setter nya aja
+	 * contoh getId ditukar jadi getDoctorId
+	 * tapi, return nya sesuai dengan properties yang dibuat
+	 * constoh
+	 * 
+	 * private Long id;
+	 * public Long getDoctorId(){
+	 * 		return id;
+	 * }
+	 * 
+	 */
 
 	public Long getId() {
 		return id;

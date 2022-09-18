@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import id.bootcamp.dto.DoctorData;
 import id.bootcamp.dto.DoctorDto;
+import id.bootcamp.dto.DoctorTreatmentDto;
 import id.bootcamp.repository.Rep_Doctor;
 
 @Service
@@ -24,5 +25,9 @@ public class M_DoctorService {
 	
 	public List<DoctorDto> getAllDoctorDto(){
 		return doctor.getAllDoctorsDto();
+	}
+	
+	public List<DoctorTreatmentDto> getAllDoctorAndTreatment(){
+		return doctor.getAllDoctorAndTreatment();
 	}
 }

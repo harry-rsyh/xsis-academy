@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import id.bootcamp.dto.DoctorData;
 import id.bootcamp.dto.DoctorDto;
+import id.bootcamp.dto.DoctorTreatmentDto;
 import id.bootcamp.service.M_DoctorService;
 
 @RestController
@@ -25,5 +26,10 @@ public class Doctor_ResCtr {
 	@RequestMapping("getListDto")
 	public List<DoctorDto> getAllDoctorDto(){
 		return service.getAllDoctorDto();
+	}
+	
+	@RequestMapping("getListTreatmentDto")
+	public List<DoctorTreatmentDto> getAllDoctorAndTreatment(){
+		return service.getAllDoctorAndTreatment();
 	}
 }
