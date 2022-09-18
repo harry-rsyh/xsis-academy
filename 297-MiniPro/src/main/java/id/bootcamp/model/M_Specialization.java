@@ -13,7 +13,7 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
-import id.bootcamp.dto.SpecializationData;
+import id.bootcamp.dto.DoctorCurrentSpecializationDto;
 
 @SqlResultSetMappings(
 	value = {
@@ -21,10 +21,12 @@ import id.bootcamp.dto.SpecializationData;
 			name = "specializationMapping",
 			classes = {
 				@ConstructorResult(
-					targetClass = SpecializationData.class,
+					targetClass = DoctorCurrentSpecializationDto.class,
 					columns = {
 						@ColumnResult(name = "id", type = Long.class),
-						@ColumnResult(name = "name"),
+						@ColumnResult(name = "doctor_id", type = Long.class),
+						@ColumnResult(name = "specialization_id", type = Long.class),
+						@ColumnResult(name = "specialization"),
 						@ColumnResult(name = "is_delete", type = Boolean.class)
 					}
 				)
@@ -37,9 +39,18 @@ import id.bootcamp.dto.SpecializationData;
 	value = {
 		@NamedNativeQuery(
 			name = "M_Specialization.getSpecializationList",
-			query = "SELECT id, name, is_delete FROM m_specialization;",
+			query = "SELECT "
+					+ "dcs.id, "
+					+ "dc.id as doctor_id, "
+					+ "dcs.specialization_id, "
+					+ "sp.name as specialization, "
+					+ "dcs.is_delete "
+					+ "FROM m_doctor dc "
+					+ "LEFT JOIN m_biodata bd ON dc.biodata_id = bd.id "
+					+ "LEFT JOIN t_doctor_current_specialization dcs ON dcs.doctor_id = dc.id "
+					+ "LEFT JOIN m_specialization sp ON dcs.specialization_id = sp.id",
 			resultSetMapping = "specializationMapping",
-			resultClass = SpecializationData.class
+			resultClass = DoctorCurrentSpecializationDto.class
 		)
 	}
 )

@@ -1,6 +1,5 @@
 package id.bootcamp.dto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorDto {
@@ -11,6 +10,7 @@ public class DoctorDto {
 	private String imagePath;
 	private Boolean isDelete;
 	private List<DoctorTreatmentDto> treatmentList;
+	private List<DoctorCurrentSpecializationDto> specializationList;
 
 	public DoctorDto() {
 		// TODO Auto-generated constructor stub
@@ -26,7 +26,8 @@ public class DoctorDto {
 		this.isDelete = isDelete;
 	}
 	
-	public DoctorDto(DoctorDto doctor, List<DoctorTreatmentDto> treatmentList) {
+	//Di inject dari M_DoctorServie
+	public DoctorDto(DoctorDto doctor, List<DoctorTreatmentDto> treatmentList, List<DoctorCurrentSpecializationDto> specializationList) {
 		super();
 		this.id = doctor.getId();
 		this.str = doctor.getStr();
@@ -35,6 +36,7 @@ public class DoctorDto {
 		this.imagePath = doctor.getImagePath();
 		this.isDelete = doctor.getIsDelete();
 		this.treatmentList = treatmentList;
+		this.specializationList = specializationList;
 	}
 	
 	
@@ -85,14 +87,12 @@ public class DoctorDto {
 		this.treatmentList.add(treatmentList);
 	}
 
-//	public List<DoctorTreatmentDto> getTreatment() {
-//		return treatmentList;
-//	}
-//
-//	public void setTreatment(DoctorTreatmentDto t) {
-//		DoctorTreatmentDto data = new DoctorTreatmentDto(t.getId(), t.getDoctorId(), t.getDoctorName(), t.getTreatment(), t.getIsDelete());
-////		System.out.println(treatment.getDoctorName());
-//		this.treatmentList.add(data);
-//	}
+	public List<DoctorCurrentSpecializationDto> getSpecializationList() {
+		return specializationList;
+	}
+
+	public void setSpecializationList(DoctorCurrentSpecializationDto specializationList) {
+		this.specializationList.add(specializationList);
+	}
 	
 }

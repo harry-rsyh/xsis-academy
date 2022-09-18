@@ -16,47 +16,37 @@ import id.bootcamp.repository.Rep_Doctor;
 @Service
 @Transactional
 public class M_DoctorService {
-	
+
 	@Autowired
 	private Rep_Doctor doctor;
-	
-	public List<DoctorDto> getAllDoctorDto(){
-//		doctor.getAllDoctorsDto()
-//				.stream()
-//				.forEach(data-> doctor.getAllDoctorAndTreatment()
-//						.stream()
-//						.filter(treatment -> treatment.getDoctorId() == data.getId())
-//						.forEach(res -> data.setTreatmentList(res))
-//				);
-		return doctor.getAllDoctorsDto()
-		.stream()
-		.map(s -> {
-			List<DoctorTreatmentDto> treatment = doctor.getAllDoctorAndTreatment()
-					.stream()
-					.filter(data -> data.getDoctorId() == s.getId())
-					.collect(Collectors.toList());
-			DoctorDto dto = new DoctorDto(s, treatment);
+
+	public List<DoctorDto> getAllDoctorDto() {
+		List<DoctorDto> result = doctor.getAllDoctorsDto().stream().map(s -> {
+			// Doctor Treatment
+			List<DoctorTreatmentDto> treatment = doctor.getAllDoctorAndTreatment().stream()
+					.filter(data -> data.getDoctorId() == s.getId()).collect(Collectors.toList());
+			
+			// Doctor Specialization
+			List<DoctorCurrentSpecializationDto> specialization = doctor.getAllDoctorAndSpecialization().stream()
+					.filter(data -> data.getDoctorId() == s.getId()).collect(Collectors.toList());
+			
+			// Inject Kedalam Constructor
+			DoctorDto dto = new DoctorDto(s, treatment, specialization);
+			
+			// Kembalikan hasil map nya kebentuk Doctor Dto
 			return dto;
 		}).collect(Collectors.toList());
-//		doctor.getAllDoctorAndTreatment().stream()
-//			.forEach(data -> doctor.getAllDoctorsDto().stream()
-//							.);
-//		
-//		doctor.getAllDoctorsDto().stream()
-//		.forEach(data -> System.out.println(data.getTreatmentList()));
-//		
-//		return doctor.getAllDoctorsDto();
+
+		return result;
 	}
-	
-	public List<DoctorTreatmentDto> getAllDoctorAndTreatment(){
-		List<DoctorTreatmentDto> treatment = doctor.getAllDoctorAndTreatment()
-				.stream()
-				.filter(data -> data.getDoctorId() == 1)
-				.collect(Collectors.toList());
+
+	public List<DoctorTreatmentDto> getAllDoctorAndTreatment() {
+		List<DoctorTreatmentDto> treatment = doctor.getAllDoctorAndTreatment().stream()
+				.filter(data -> data.getDoctorId() == 1).collect(Collectors.toList());
 		return treatment;
 	}
-	
-	public List<DoctorCurrentSpecializationDto> getAllDoctorAndSpecialization(){
+
+	public List<DoctorCurrentSpecializationDto> getAllDoctorAndSpecialization() {
 		return doctor.getAllDoctorAndSpecialization();
 	}
 }

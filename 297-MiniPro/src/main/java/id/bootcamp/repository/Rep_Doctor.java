@@ -29,7 +29,7 @@ public interface Rep_Doctor extends JpaRepository<M_Doctor, Long>{
 	public List<DoctorTreatmentDto> getAllDoctorAndTreatment();
 	
 	@Query(value = "SELECT new id.bootcamp.dto.DoctorCurrentSpecializationDto"
-			+ "(dcs.id, dc.id, bd.fullname, dcs.specialization_id, sp.name, dcs.isDelete) "
+			+ "(dcs.id, dc.id, dcs.specialization_id, sp.name, dcs.isDelete) "
 			+ "FROM M_Doctor dc "
 			+ "LEFT JOIN M_Biodata bd ON dc.biodata_id = bd.id "
 			+ "LEFT JOIN T_DoctorCurrentSpecialization dcs ON dcs.doctor_id = dc.id "

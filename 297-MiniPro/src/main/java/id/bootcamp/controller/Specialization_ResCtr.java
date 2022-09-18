@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import id.bootcamp.dto.SpecializationData;
+import id.bootcamp.dto.DoctorCurrentSpecializationDto;
 import id.bootcamp.service.Svc_Specialization;
 
 @RestController
@@ -17,7 +17,7 @@ public class Specialization_ResCtr {
 	private Svc_Specialization svcSpecialization;
 	
 	@RequestMapping("getList")
-	public List<SpecializationData> getSpecializationList(){
+	public List<DoctorCurrentSpecializationDto> getSpecializationList(){
 		return svcSpecialization.getSpecializationList();
 	}
 }
