@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import id.bootcamp.dto.LocationData;
 import id.bootcamp.dto.LocationSpesificData;
 import id.bootcamp.repository.Rep_Location;
 
@@ -18,7 +17,7 @@ public class Svc_Location {
 	@Autowired
 	private Rep_Location repLocation;
 	
-	public List<LocationData> getAllLocation(){
+	public List<LocationSpesificData> getAllLocation(){
 		return repLocation.getLocationList();
 	}
 	
@@ -29,4 +28,5 @@ public class Svc_Location {
 	public List<LocationSpesificData> getKabKotaList(){
 		return repLocation.getKabKotaList();
 	}
+
 }

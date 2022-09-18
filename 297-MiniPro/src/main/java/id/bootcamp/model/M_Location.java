@@ -13,7 +13,8 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
-import id.bootcamp.dto.LocationData;
+import id.bootcamp.dto.DtoTest;
+import id.bootcamp.dto.LocationParentData;
 import id.bootcamp.dto.LocationSpesificData;
 
 @SqlResultSetMappings(
@@ -22,12 +23,13 @@ import id.bootcamp.dto.LocationSpesificData;
 			name = "locationMapping",
 			classes = {
 				@ConstructorResult(
-					targetClass = LocationData.class,
+					targetClass = LocationSpesificData.class,
 					columns = {
 							@ColumnResult(name = "id", type = Long.class),
 							@ColumnResult(name = "name"),
 							@ColumnResult(name = "parent_id", type = Long.class),
-							@ColumnResult(name = "location_level_id", type = Long.class)
+							@ColumnResult(name = "location_level_id", type = Long.class),
+							@ColumnResult(name = "is_delete", type = Boolean.class)
 					}
 				)
 			}
@@ -61,6 +63,21 @@ import id.bootcamp.dto.LocationSpesificData;
 					}
 				)
 			}
+		),
+		@SqlResultSetMapping(
+			name = "testMapping",
+			classes = {
+				@ConstructorResult(
+					targetClass = LocationSpesificData.class,
+					columns = {
+							@ColumnResult(name = "id", type = Long.class),
+							@ColumnResult(name = "name"),
+							@ColumnResult(name = "parent_id", type = Long.class),
+							@ColumnResult(name = "location_level_id", type = Long.class),
+							@ColumnResult(name = "is_delete", type = Boolean.class)
+					}
+				)
+			}
 		)
 	}
 )
@@ -69,9 +86,9 @@ import id.bootcamp.dto.LocationSpesificData;
 	value = {
 		@NamedNativeQuery(
 			name = "M_Location.getLocationList",
-			query = "SELECT id,	name, parent_id, location_level_id FROM m_location;",
+			query = "SELECT id,	name, parent_id, location_level_id, is_delete FROM m_location;",
 			resultSetMapping = "locationMapping",
-			resultClass = LocationData.class
+			resultClass = LocationSpesificData.class
 		),
 		@NamedNativeQuery(
 			name = "M_Location.getKecamatanList",

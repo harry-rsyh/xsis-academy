@@ -1,6 +1,6 @@
 package id.bootcamp.dto;
 
-public class LocationSpesificData {
+public class LocationParentData {
 	
 	private Long id;
 	private String name;
@@ -8,11 +8,11 @@ public class LocationSpesificData {
 	private Long locationLevelId;
 	private Boolean isDelete;
 	
-	public LocationSpesificData() {
+	public LocationParentData() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public LocationSpesificData(Long id, String name, Long parentId, Long locationLevelId, Boolean isDelete) {
+	public LocationParentData(Long id, String name, Long parentId, Long locationLevelId, Boolean isDelete) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -60,15 +60,4 @@ public class LocationSpesificData {
 	public void setIsDelete(Boolean isDelete) {
 		this.isDelete = isDelete;
 	}
-	
-	private DtoTest dtoTest;
-
-	public DtoTest getDtoTest() {
-		return dtoTest;
-	}
-
-	public void setDtoTest(DtoTest dtoTest) {
-		this.dtoTest = dtoTest;
-	}
-	
 }

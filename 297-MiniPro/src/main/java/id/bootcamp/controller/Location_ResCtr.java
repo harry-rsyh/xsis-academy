@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import id.bootcamp.dto.LocationData;
 import id.bootcamp.dto.LocationSpesificData;
 import id.bootcamp.service.Svc_Location;
 
@@ -18,7 +17,7 @@ public class Location_ResCtr {
 	private Svc_Location svcLocation;
 	
 	@RequestMapping("getList")
-	public List<LocationData> getAllLocation(){
+	public List<LocationSpesificData> getAllLocation(){
 		return svcLocation.getAllLocation();
 	}
 	
@@ -31,4 +30,5 @@ public class Location_ResCtr {
 	public List<LocationSpesificData> getKabKotaList(){
 		return svcLocation.getKabKotaList();
 	}
+	
 }
