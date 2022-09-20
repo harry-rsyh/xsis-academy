@@ -13,8 +13,6 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
-import id.bootcamp.dto.DtoTest;
-import id.bootcamp.dto.LocationParentData;
 import id.bootcamp.dto.LocationSpesificData;
 
 @SqlResultSetMappings(
